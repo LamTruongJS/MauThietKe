@@ -16,7 +16,9 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
         HoaDon hd = new KhachHangThanThiet();
+//        hd.themVaoHoaDon(new CTHoaDon(new MatHang(tenMH, 0), 0, 0));
         hd.inDS();
         
     }

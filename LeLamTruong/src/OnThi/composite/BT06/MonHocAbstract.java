@@ -10,7 +10,7 @@ package OnThi.composite.BT06;
  * @author Administrator
  */
 public abstract class MonHocAbstract {
-    String pre = "";
+    String pre = " ";
     String name;
 
     public MonHocAbstract(String name) {

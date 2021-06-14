@@ -10,6 +10,7 @@ package OnThi.singleton.BT04.F2;
  * @author Administrator
  */
 public class DataAccessFactory {
+    //chọn loại dataAccess và trả về DataAccess đó
     public static DataAccess createDataAccess(String type){
         if(type == "SQL"){
             return new SQL();
@@ -17,6 +18,6 @@ public class DataAccessFactory {
         else if(type == "MySQL"){
             return new MySQL();
         }
-        return null;
+       return null;
     }
 }

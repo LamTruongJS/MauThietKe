@@ -28,9 +28,11 @@ public class Activity implements Button.IObserver{
     public void xoaButton(){
         button.xoaKhoiActivity();
     }
+    
+    
     @Override
     public void listenClick() {
-      soLanClick++;
+        soLanClick++;
         System.out.println("Số lần nhấn: "+soLanClick);
     }
     

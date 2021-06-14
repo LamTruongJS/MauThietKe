@@ -13,21 +13,26 @@ import java.util.List;
  * @author Administrator
  */
 public abstract class DataAccess {
-     protected List<SanPham> listSp = new ArrayList<>();
-     private static List<DataAccess> instances = new ArrayList<>();
+    protected List<SanPham> listSp = new ArrayList<>();
+    private static List<DataAccess> instances = new ArrayList<>();
     private static List<String> typesDataAccess = new ArrayList<>();
     // phần khai báo singleton
     private static DataAccess instance;
     protected DataAccess(){}
+    //phương thức khởi tạo
     public static DataAccess getInstance(String type){
+        //nếu không thì nó sẽ tạo một instance mới vào thêm tên loại instance và instance đó vô từng list
         if(!typesDataAccess.contains(type)){
             typesDataAccess.add(type);
             DataAccess newInstance = DataAccessFactory.createDataAccess(type);
             instances.add(newInstance);
+            System.out.println("aaaaaaaa");
             return newInstance;
+            
         }
         else{
             int index = typesDataAccess.indexOf(type);
+            // dựa vào index để có thể lấy ra được instance nào được khởi tạo
             return instances.get(index);
         }
     }

@@ -10,7 +10,7 @@ package OnThi.BT02.F1;
  * @author Administrator
  */
 public class RutTien implements IRutTien{
-
+    //gọi giao diện là 1 thuộc tính và kí hiệu là successor
     IRutTien successor;
     int menhGia;
 

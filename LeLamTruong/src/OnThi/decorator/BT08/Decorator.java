@@ -17,7 +17,9 @@ public abstract class Decorator extends Tokienize{
         this.tokienize = tokienize;
     }
 
+    @Override
     public abstract void tachChuoi();
+   
    
     
      

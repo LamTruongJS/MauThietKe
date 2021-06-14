@@ -31,11 +31,21 @@ public class Composite extends MonHocAbstract{
 
     @Override
     public void remove(MonHocAbstract item) {
-        childItems.remove(item);
+         if(childItems.contains(item)){
+            childItems.remove(item);
+        }
     }
 
     @Override
     public int tongTC() {
+        //Cách duyệt 1
+//       int tongtc =0;
+//       for(MonHocAbstract t: childItems)
+//       {
+//           tongtc += t.tongTC();
+//       }
+//       return tongtc;
+        //Cách duyệt 2
         int result = childItems.stream().mapToInt(value -> value.tongTC()).sum();
         return result;
     }
@@ -48,15 +58,15 @@ public class Composite extends MonHocAbstract{
 
     @Override
     public String hienThiCay() {
-        StringBuilder strBuilder = new StringBuilder();
-        strBuilder.append(pre)
+        StringBuilder Builder = new StringBuilder();
+        Builder.append(pre)
                 .append(name);
-        for(MonHocAbstract cf : childItems){
-            cf.pre = this.pre + "-----";
-            strBuilder.append("\n")
-                    .append(cf.hienThiCay());
-            cf.pre = "";
+        for(MonHocAbstract item : childItems){
+            item.pre = this.pre + "-----";
+            Builder.append("\n")
+                    .append(item.hienThiCay());
+            item.pre = "";
         }
-        return strBuilder.toString();
+        return Builder.toString();
     }
 }

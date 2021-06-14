@@ -34,6 +34,8 @@ public class Main {
         
         dataAccess.capNhat(sp1, sp6);
         dataAccess.inDS();
+       
+        
         
     }
     

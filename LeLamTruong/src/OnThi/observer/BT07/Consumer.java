@@ -18,14 +18,7 @@ public class Consumer implements Stream.IConsumer{
     public Consumer(Stream stream) {
         this.stream = stream;
     }
-    public void add(String chuoi)
-    {
-        stream.add(chuoi);
-    }
-    public void capNhatChuoi(String chuoiCu, String chuoiMoi)
-    {
-        stream.capNhatChuoi(chuoiCu, chuoiMoi);
-    }
+  
     //không cần thiết phải có
     public void dangKy(){
         stream.dangKy(this);

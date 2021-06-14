@@ -20,8 +20,13 @@ public class Main {
        Activity  c = new Activity(b);
        c.themButton();
        b.Click();
+       b.Click();
+       b.Click();
+       b.Click();
        c.xoaButton();
        b.Click();
+       
+      
        
     } 
     

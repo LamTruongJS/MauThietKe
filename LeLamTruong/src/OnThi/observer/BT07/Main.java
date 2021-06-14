@@ -22,9 +22,9 @@ public class Main {
         consumer.dangKy();
         
         
-        consumer.add("Chuỗi 1");
-        consumer.add("Chuỗi 2");
-        consumer.capNhatChuoi("Chuỗi 2", "Chuỗi thay thế chuỗi 2");
+        stream.add("Chuỗi 1");
+        stream.add("Chuỗi 2");
+        stream.capNhatChuoi("Chuỗi 2", "Chuỗi thay thế chuỗi 2");
         
     }
     

@@ -24,6 +24,7 @@ public class Punctuation extends Decorator{
         {        
             chuoi = chuoi.replace(chuoiPunctuation[i],"");
         }
+        
          String[] strs = chuoi.split("\\s+");
             for (int i=0; i < strs.length; i++) {
             System.out.println("["+i+"]:"+strs[i]);

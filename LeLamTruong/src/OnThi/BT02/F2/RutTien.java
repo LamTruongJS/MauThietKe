@@ -10,6 +10,7 @@ package OnThi.BT02.F2;
  * @author Administrator
  */
 public class RutTien implements IRutTien{
+    //gọi giao diện là 1 thuộc tính của lớp
     IRutTien successor;
     int menhGia;
     
@@ -26,7 +27,7 @@ public class RutTien implements IRutTien{
 
     @Override
     public void soTo(int soTien) {
-                // nếu số tiền hiện có nhỏ hơn mệnh giá thì chuyển cho mệnh giá nhỏ hơn tính số tờ tiền
+        // nếu số tiền hiện có nhỏ hơn mệnh giá thì chuyển cho mệnh giá nhỏ hơn tính số tờ tiền
         if(soTien<menhGia)
             successor.soTo(soTien);
         else

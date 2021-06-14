@@ -20,8 +20,12 @@ public abstract class HoaDon {
         lsthd.add(new CTHoaDon(new MatHang("Mít", 100), 20, 20000));
         lsthd.add(new CTHoaDon(new MatHang("Mận", 100), 10, 10000));
     }
+//    public void themVaoHoaDon(CTHoaDon tt){
+//        lsthd.add(tt);
+//    }
     public abstract double tienChietKhau();
     
+    //tồng tiền mua hàng chưa tính chiết khấu
     public double tongTien(){
         double tongTien=0;
         if(lsthd.size()>0)
@@ -33,9 +37,11 @@ public abstract class HoaDon {
         }
         return tongTien;
     }
+    
     public double tienThanhToan(){
         return tongTien()-tienChietKhau();
     }
+    
     public void inDS(){
       for(CTHoaDon item : lsthd){
             System.out.println("Tên MH : " + item.getMatHang().getTenMH()

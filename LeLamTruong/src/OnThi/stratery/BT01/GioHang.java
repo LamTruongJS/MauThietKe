@@ -31,6 +31,10 @@ public class GioHang {
        lstmh.add(new MatHang("Xoài", 20, 10000));
        lstmh.add(new MatHang("Quýt", 10, 20000));
    }
+//   public void add(MatHang mh)
+//   {
+//       lstmh.add(mh);
+//   }
    //Cung cấp hình thức thanh toán
     public void setThanhToan(IThanhToan thanhToan) {
         this.HinhThucTT = thanhToan;
@@ -57,13 +61,16 @@ public class GioHang {
         }
         return tong;
     }
+   //tiền giảm của hình thức thanh toán
     public double tienHTTT(){
         double tienGiam = lstmh.stream().mapToDouble(e ->HinhThucTT.tienGiam(e.getDonGia()*e.getSoLuong())).sum();
             return tienGiam;         
     }
+    //Tiền vận chuyển
     public double tienVC(){
         return HinhThucVC.phiVanChuyen();
     }
+    //tiền giảm của khuyến mãi
     public double tienKM(){
         double tienKM=0;
         if(HinhThucKM==null)
@@ -71,10 +78,11 @@ public class GioHang {
         return tienKM=lstmh.stream().mapToDouble(e->HinhThucKM.tienKhuyenMai(e.getDonGia()* e.getSoLuong())).sum();
        
     }
-    //tien duoc khuyen mai
-    //tính tổng tiền cuoi cung rồi in ra
+    
+    //tính tổng tiền cuối cùng cần thanh toán
     public double tienCanThanhToan(){
-        double sum = lstmh.stream().mapToDouble(e->HinhThucTT.thanhToan(e.getDonGia()* e.getSoLuong())).sum();       
+        
+       double sum = lstmh.stream().mapToDouble(e->HinhThucTT.thanhToan(e.getDonGia()* e.getSoLuong())).sum();    
                 sum += tienVC();
                 sum -= tienKM();
         return sum;

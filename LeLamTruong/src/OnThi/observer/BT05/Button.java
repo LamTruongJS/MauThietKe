@@ -13,9 +13,9 @@ import java.util.List;
  * @author Administrator
  */
 public class Button {
-    //nếu nhiều màn hình có 1 button thì ta phải khai báo danh sách giao diện IClick
+    //nếu nhiều màn hình có 1 button thì ta phải khai báo danh sách giao diện IObserver
     //vì mỗi màn hình chỉ có 1 button nên ta chỉ cần khai báo như sau:
-     IObserver listeners;
+    IObserver listeners;
 
   
     //dang ki
@@ -31,9 +31,13 @@ public class Button {
             listeners = null;
     }
     public void Click()
-    {   if(listeners != null)
+    {   
+        if(listeners != null)
         listeners.listenClick();
     }
+    
+    //Giao diện này có chức năng cập nhật cho các đối tượng
+    //Sẽ được gửi thông báo đến khi có sự thay đổi trạng thái.
    public interface IObserver{
        public void listenClick();
    } 

@@ -30,6 +30,8 @@ public class Button {
         if(listeners != null)
             listeners = null;
     }
+    
+    //giống phương thức thông báo
     public void Click()
     {   
         if(listeners != null)
